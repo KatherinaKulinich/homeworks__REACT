@@ -1,0 +1,31 @@
+.itemBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.itemText {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #060C6A ;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+.itemButton {
+    width: 70px;
+    height: 70px;
+    font-size: 36px;
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+    background-color: rgba(224, 226, 253, .3 ) ;
+}
+
+.itemButton:hover {
+    background-color: rgba(224, 226, 253, .5 ) ;
+}
+
+.itemButton:active {
+    background-color: rgba(224, 226, 253, .8 ) ;
+}
