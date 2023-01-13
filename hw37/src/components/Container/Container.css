@@ -1,0 +1,18 @@
+.container {
+    height: 80vh;
+    width: 100%;
+    max-width: 700px;
+    background-color: #1F374F  ;
+    border-radius: 10px;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.container__title {
+    color: #FFFFFF;
+}
