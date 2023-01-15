@@ -1,0 +1,37 @@
+.form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.form__input {
+    width: 100%;
+    padding: 10px;
+    max-width: 400px;
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+    outline-color: #42701B;
+}
+
+.form__button {
+    width: 100px;
+    border: 1px solid #FFFFFF;
+    background-color: green;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.form__button:active {
+    width: 100px;
+    border: 2px solid #FFFFFF;
+    background-color: #42701B ;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.form__label {
+    display: none;
+}

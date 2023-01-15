@@ -1,0 +1,17 @@
+.todo-list {
+    width: 100%;
+    padding-left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+}
+
+.todo__message {
+    font-size: 26px;
+    line-height: 39px;
+    color: #EEB91E ;
+    text-transform: uppercase;
+}
+
