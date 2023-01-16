@@ -63,8 +63,8 @@ const ContactsPage = () => {
         <div className='container-xxl'>
             <div className='row'>
                 <ContactsTable 
-                    userContacts={fetchContacts} 
-                    deleteContact={deleteContact}
+                    contacts={contacts} 
+                    onDelete={handleDelete}
                 />
             </div>
             {errorMessage && 
