@@ -1,14 +1,30 @@
 import React from "react";
+import { Todo } from "../Container/Container";
 import  '../Form/Form.css';
 
 interface userValue {
-    value: string,
-    setValue: any,
-    addNewItem: any
+    setTodosList: any
+    todosList: Todo[]
 }
 
-function Form({value, setValue, addNewItem}: userValue) {
-    
+function Form({todosList, setTodosList}: userValue) {
+    const [value, setValue] = React.useState('');
+
+
+    function addItem(e:any) {
+        e.preventDefault();
+
+        if (!value) return;
+
+        const item: Todo = {
+            id: Math.floor(Math.random() * 100000),
+            text: value
+        }
+
+        setTodosList([...todosList, item])
+        setValue('')
+    }
+
     return (
         <form 
             className="form" 
@@ -31,7 +47,7 @@ function Form({value, setValue, addNewItem}: userValue) {
             <button 
                 className="form__button"
                 type="submit"
-                onClick={addNewItem}
+                onClick={addItem}
             >
                 Add
             </button>
