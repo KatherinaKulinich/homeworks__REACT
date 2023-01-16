@@ -18,7 +18,7 @@ interface Object {
 
 const ContactsPage = () => {
 
-    const [form, setForm] = React.useState(false);
+    const [isFromVisible, setIsromVisible] = React.useState(false);
     const [contacts, setContacts] = React.useState<User[]>([]);
     const [errorMessage, setErrorMessage] = React.useState(false)
 
