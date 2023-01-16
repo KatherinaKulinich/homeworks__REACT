@@ -23,7 +23,7 @@ const ContactsTable = ({userContacts, deleteContact}: Props) => {
                                     userFullName={user.name}
                                     userName={user.username}
                                     userPhone={user.phone} 
-                                    deleteContact={deleteContact} 
+                                    onDelete={deleteContact} 
                                     key={user.id} 
                                     id = {user.id}             
                                 /> 

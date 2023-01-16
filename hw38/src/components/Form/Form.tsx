@@ -8,12 +8,12 @@ import Input from '../Input/Input';
 
 type formState = {
     openForm: () => void,
-    fetchContacts: User[],
-    setFetchContacts: any
+    contacts: User[],
+    setContacts: any
 }
 
 
-const Form = ({openForm, setFetchContacts, fetchContacts}: formState) => {
+const Form = ({openForm, setContacts, contacts}: formState) => {
     const [inputsValues, setInputsValues] = React.useState({
         id: Date.now(),
         name: '',
@@ -34,7 +34,7 @@ const Form = ({openForm, setFetchContacts, fetchContacts}: formState) => {
         event.preventDefault();
 
         if (inputsValues.name !== '' && inputsValues.username !== '' && inputsValues.phone !== '') {
-            setFetchContacts([...fetchContacts, inputsValues])
+            setContacts([...contacts, inputsValues])
             openForm()
             return
         }

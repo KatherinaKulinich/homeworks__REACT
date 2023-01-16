@@ -18,7 +18,7 @@ interface Object {
 
 const ContactsPage = () => {
 
-    const [isFromVisible, setIsromVisible] = React.useState(false);
+    const [isFormVisible, setIsFormVisible] = React.useState(false);
     const [contacts, setContacts] = React.useState<User[]>([]);
     const [errorMessage, setErrorMessage] = React.useState(false)
 
@@ -39,7 +39,7 @@ const ContactsPage = () => {
                 return obj
             }, {}))
 
-            return setFetchContacts(userArray);
+            return setContacts(userArray);
         })
         .catch(error => {
             setErrorMessage(!errorMessage)
@@ -49,22 +49,22 @@ const ContactsPage = () => {
 
     
     function openForm():void {
-        setForm(!form) 
+        setIsFormVisible(!isFormVisible) 
     }
 
     function deleteContact(key:number):void {
-        const arrayAfterDeletion:User[] = fetchContacts.filter((contact:User) => {
+        const arrayAfterDeletion:User[] = contacts.filter((contact:User) => {
             return contact.id !== key
         })
-        setFetchContacts(arrayAfterDeletion)
+        setContacts(arrayAfterDeletion)
     }
 
     return (
         <div className='container-xxl'>
             <div className='row'>
                 <ContactsTable 
-                    contacts={contacts} 
-                    onDelete={handleDelete}
+                    userContacts={contacts} 
+                    deleteContact={deleteContact}
                 />
             </div>
             {errorMessage && 
@@ -78,11 +78,11 @@ const ContactsPage = () => {
                 buttonText={'Add new contact'}
                 buttonType={'button'}
             />
-            {form && 
+            {isFormVisible && 
                 <Form 
                     openForm={openForm} 
-                    setFetchContacts={setFetchContacts} 
-                    fetchContacts={fetchContacts}
+                    setContacts={setContacts} 
+                    contacts={contacts}
                 />
             }
         </div>
@@ -90,4 +90,5 @@ const ContactsPage = () => {
 }
 
 export default ContactsPage;
+
 
