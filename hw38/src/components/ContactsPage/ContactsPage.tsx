@@ -19,7 +19,7 @@ interface Object {
 const ContactsPage = () => {
 
     const [form, setForm] = React.useState(false);
-    const [fetchContacts, setFetchContacts] = React.useState<User[]>([]);
+    const [contacts, setContacts] = React.useState<User[]>([]);
     const [errorMessage, setErrorMessage] = React.useState(false)
 
 
