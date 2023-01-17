@@ -6,7 +6,7 @@ import '../UsersPage/UserPage.css'
 
 
 
-interface User {
+interface UserItem {
     id: number
     name: string
     phone: string
@@ -23,23 +23,22 @@ type Item = {
     [key: string]: string | number
 }
 
+const keys = ['id', 'name', 'address', 'phone', 'email', 'company'];
 
 
-
-function UserPage() {
-    const [users, setUsers] = React.useState<User[]>([]);
+const UserPage: React.FC = () => {
+    const [users, setUsers] = React.useState<UserItem[]>([]);
 
     React.useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/users`)
         .then(response => response.json())
         .then(data => {
-            const keys = ['id', 'name', 'address', 'phone', 'email', 'company'];
-            const usersArray:User[] = data.map((item: Item) => keys.reduce((obj: Item, i) => {
+            const usersArray:UserItem[] = data.map((item: Item) => keys.reduce((obj: Item, i) => {
                 obj[i]= item[i];
                 return obj
             }, {}))
 
-            return setUsers(usersArray)
+            setUsers(usersArray)
         })
         .catch(error => {
             console.warn(error);
@@ -54,7 +53,7 @@ function UserPage() {
             <main className='section user-page'>
                 <div className='users-section'>
                     {
-                        users.map((user:User) => (
+                        users.map((user:UserItem) => (
                             <div 
                                 key={user.id} 
                                 className='user-card'

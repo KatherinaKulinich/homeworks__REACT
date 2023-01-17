@@ -8,7 +8,7 @@ interface Title {
 }
 
 
-function Header({pageTitle}:Title) {
+const Header: React.FC<Title> = ({pageTitle}) => {
 
     return ( 
         <div className='header'>

@@ -13,7 +13,7 @@ interface ButtonLinkProps {
 
 
 
-function ButtonLink({linkPath, linkText}:ButtonLinkProps) {
+const ButtonLink: React.FC<ButtonLinkProps> = ({linkPath, linkText}) => {
     return ( 
         <Link 
             to={linkPath} 

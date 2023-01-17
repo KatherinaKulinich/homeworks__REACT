@@ -6,7 +6,7 @@ import PhotoCard from '../../components/PhotoCard/PhotoCard';
 import '../PhotosPage/PhotosPage.css'
 
 
-interface Photo {
+interface PhotoItem {
     albumId: number
     id: number
     title: string
@@ -14,8 +14,8 @@ interface Photo {
     thumbnailUrl:string
 }
 
-function PhotosPage() {
-    const [photos, setPhotos] = React.useState<Photo[]>([])
+const  PhotosPage: React.FC = () => {
+    const [photos, setPhotos] = React.useState<PhotoItem[]>([])
     const {albumId} = useParams()
     const {userId} = useParams()
 
@@ -45,7 +45,7 @@ function PhotosPage() {
                 />
                 <div className='photos-section'>
                     {
-                        photos.map((photo: Photo) => (
+                        photos.map((photo: PhotoItem) => (
                             <div 
                                 key={photo.id} 
                                 className='photo-item'

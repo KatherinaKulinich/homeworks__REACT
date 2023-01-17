@@ -12,7 +12,7 @@ interface Album {
 
 
 
-function AlbumCard({albumTitle, path}:Album) {
+const AlbumCard:React.FC<Album> = ({albumTitle, path}) => {
     return ( 
         <div className='card-album'>
             <div className='card-album__field'>

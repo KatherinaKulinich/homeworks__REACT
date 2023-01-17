@@ -7,7 +7,7 @@ import '../AlbumsPage/AlbumsPage.css'
 
 
 
-interface Album {
+interface AlbumItem {
     userId: number
     id: number
     title: string
@@ -16,8 +16,8 @@ interface Album {
 
 
 
-function AlbumsPage() {
-    const [albums, setAlbums] = React.useState<Album[]>([]);
+const AlbumsPage: React.FC = () => {
+    const [albums, setAlbums] = React.useState<AlbumItem[]>([]);
     const {userId} = useParams()
 
     React.useEffect(() => {
@@ -42,12 +42,12 @@ function AlbumsPage() {
                 />
                 <div className="album-section">
                     {
-                        albums.map((album: Album) => (
+                        albums.map((album: AlbumItem) => (
 
                             <div key={album.id}>
                                 <AlbumCard 
                                     albumTitle={album.title}
-                                    path={`/users/${album.userId}/albums/albums/${album.id}/photos`}                                
+                                    path={`/users/${album.userId}/albums/${album.id}/photos`}                                
                                 />
                             </div>
                         ))

@@ -1,7 +1,7 @@
 import React from "react";
 import '../404/404.css'
 
-function ErrorPage() {
+const ErrorPage: React.FC = () => {
     return (  
         <div className="wrapper">
             <div className="error-page">

@@ -13,7 +13,7 @@ interface User {
 }
 
 
-function UserCard({userName, userCity, userMail, userPhone, userCompany, path}:User) {
+const UserCard: React.FC<User> = ({userName, userCity, userMail, userPhone, userCompany, path}) =>  {
     return ( 
         <div className='card'>
             <h2 className='card__name'>

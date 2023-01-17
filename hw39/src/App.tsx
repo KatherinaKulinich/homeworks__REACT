@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <AlbumsPage />
   },
   {
-    path: "/users/:userId/albums/albums/:albumId/photos",
+    path: "/users/:userId/albums/:albumId/photos",
     element: <PhotosPage />
   },
   {
@@ -33,11 +33,9 @@ const router = createBrowserRouter([
 
 
 function App() {
-  return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  )
+    return(
+        <RouterProvider router={router} />
+    )
 }
 
 export default App

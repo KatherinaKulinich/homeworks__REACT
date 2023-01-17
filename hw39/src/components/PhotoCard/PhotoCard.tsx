@@ -11,7 +11,7 @@ interface Photo {
 
 
 
-function PhotoCard({imagePath, imageText}:Photo) {
+const  PhotoCard: React.FC<Photo> = ({imagePath, imageText}) => {
     return ( 
         <div className='card-photo'>
             <img 
