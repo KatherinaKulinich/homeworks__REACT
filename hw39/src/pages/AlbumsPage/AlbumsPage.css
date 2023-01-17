@@ -1,0 +1,11 @@
+.album-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.album-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
