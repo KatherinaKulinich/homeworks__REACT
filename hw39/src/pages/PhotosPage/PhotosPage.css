@@ -1,0 +1,16 @@
+.photos-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.photos-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.photo-item {
+    width: calc(20% - 20px);
+
+}
